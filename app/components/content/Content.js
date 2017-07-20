@@ -1,4 +1,3 @@
-import React from 'react';
 import SearchBox from '../searchBox/search';
 import FilterPosts from '../filterBox/FilterPosts';
 import Posts from '../posts/Posts';

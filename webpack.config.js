@@ -6,6 +6,7 @@ const autoprefixer = require('autoprefixer');
 
 // Load Webpack Plugins
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CleanPlugin       = require('clean-webpack-plugin');
 
 // Settings
@@ -49,7 +50,11 @@ const config = {
       // We must envify CommonJS builds:
       // https://github.com/reactjs/redux/issues/1029
       'process.env.NODE_ENV': JSON.stringify(appEnv)
-    })
+    }),
+
+    new CopyWebpackPlugin([
+       { from: 'data/*', to: 'data/' },
+    ])
   ],
 
   // Enable loading modules relatively (without the ../../ prefix)

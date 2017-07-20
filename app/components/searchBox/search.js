@@ -1,6 +1,6 @@
 import React from "react";
 
-export default class SearchBox extends React.Component {
+class SearchBox extends React.Component {
 	render () {
 		return (
 			<div className="well">
@@ -19,3 +19,5 @@ export default class SearchBox extends React.Component {
 		);		
 	}
 }
+
+export default SearchBox;

@@ -1,7 +1,7 @@
 import React from "react";
 import CounterHeader from './header/CounterHeader';
 
-export default class Posts extends React.Component {
+class Posts extends React.Component {
 	render () {
 		let posts = 9;
 		return (
@@ -9,3 +9,5 @@ export default class Posts extends React.Component {
 		);
 	}
 }
+
+export default Posts;

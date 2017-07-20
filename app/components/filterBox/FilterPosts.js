@@ -1,6 +1,6 @@
 import React from "react";
 
-export default class FilterPosts extends React.Component {
+class FilterPosts extends React.Component {
 	render () {
 		return (
 			<div className="well">
@@ -24,3 +24,5 @@ export default class FilterPosts extends React.Component {
 		);
 	}
 }
+
+export default FilterPosts;
