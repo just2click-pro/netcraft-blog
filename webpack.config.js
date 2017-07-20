@@ -8,7 +8,7 @@ const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CleanPlugin       = require('clean-webpack-plugin');
-
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 // Settings
 const appEnv   = process.env.NODE_ENV || 'development';
 const appPath  = path.join(__dirname, 'app');
@@ -53,7 +53,7 @@ const config = {
     }),
 
     new CopyWebpackPlugin([
-       { from: 'data/*', to: 'data/' },
+      { from: '../data', to: 'data' }
     ])
   ],
 

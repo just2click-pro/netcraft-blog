@@ -3,14 +3,11 @@ import CounterHeader from './header/CounterHeader';
 import { moment } from "moment";
 import { connect } from 'react-redux';
 import { getPostsPage } from '../../actions/creators';
-import PostsServices from '../../services/PostsServices';
 
-export default class Posts extends React.Component {
+class Posts extends React.Component {
   	constructor (props) {
     	super(props);
 
-      // At this stage we only want to get the first page
-      this.posts = [];
   	}
 
 	componentDidMount () {
@@ -18,7 +15,6 @@ export default class Posts extends React.Component {
 	}
 
   	componentWillReceiveProps (nextProps) {
-      this.posts = PostsServices.getPostsPage(1);
   	}
 
   	renderPost (title, author, date, tags, description) {
@@ -43,6 +39,7 @@ export default class Posts extends React.Component {
   			</article>
 		);
   	}
+
 	render () {
 		if (this.props.isLoading) {
 			return (<CounterHeader title="Loading ..." />);
@@ -59,16 +56,16 @@ export default class Posts extends React.Component {
 	}
 }
 
-// function mapDispatchToProps(dispatch) {
-//   return {
-//     getPostsPage: () => dispatch( getPostsPage() ) 
-//   }
-// }
+function mapDispatchToProps(dispatch) {
+  return {
+    getPostsPage: () => dispatch( getPostsPage() ) 
+  }
+}
 
-// function mapStateToProps (state) {
-// 	return {
-// 		isLoading: state.posts.isLoading
-// 	}
-// }
+function mapStateToProps (state) {
+	return {
+		isLoading: state.posts.isLoading
+	}
+}
 
-// export default connect(mapStateToProps, mapDispatchToProps) (Posts);
+export default connect(mapStateToProps, mapDispatchToProps) (Posts);
